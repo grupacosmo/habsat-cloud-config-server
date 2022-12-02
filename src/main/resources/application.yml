@@ -3,10 +3,14 @@ spring:
     config:
       server:
         native:
-          search-locations: 'file:${config.path}'
+          search-locations: 'file:${CONFIG_PATH}'
   profiles:
     active: 'native'
   application:
     name: 'config-server'
 server:
   port: 8061
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL}
